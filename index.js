@@ -1,15 +1,11 @@
-
-require("datejs");
-
-function combineUsers(...userArrays) {
-  const users = userArrays.flat();
+function combineUsers(...arrays) {
+  const users = [].concat(...arrays);
+  const merge_date = Date.today().toString("M/d/yyyy");
 
   return {
     users: users,
-    merge_date: Date.today().toString("M/d/yyyy")
+    merge_date: merge_date
   };
 }
 
-module.exports = {
-  combineUsers
-};
+module.exports = { combineUsers };
